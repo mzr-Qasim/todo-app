@@ -1,0 +1,41 @@
+@media (max-width: 1200px) {
+  .main-content-inner {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .main-content-inner {
+    flex-direction: column;
+  }
+
+  .aside-wrapper {
+    width: 100%;
+    position: static;
+
+    .aside-main-hero {
+      display: block;
+      figure {
+        aspect-ratio: 1/0.65;
+      }
+    }
+  }
+
+  .content-inner {
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+ section.resume-section{
+.resume-wrapper{
+  li{
+    display: block;
+    span{
+      display: block;
+    }
+  }
+}
+}
+}

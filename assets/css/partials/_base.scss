@@ -1,0 +1,157 @@
+$black-color: #000;
+$white-color: #fff;
+
+$navbar-color: rgb(17, 17, 17);
+$navbar-links-color : #9D9D9D;
+
+$theme-color-1: #6C33FF;
+$theme-text-color-1:          rgb(119, 119, 119) -10%;
+$theme-text-color-2:          rgb(255, 255, 255) 100%;
+$para-text-color:             rgb(167, 167, 167);
+
+$theme-grey: #ffffff14;
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+ul,
+li,
+p,
+button,
+figure,
+img,
+input {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+
+body {
+    overflow: hidden;
+    overflow-y: auto;
+      font-family: "League Spartan", sans-serif;
+
+
+}
+
+
+.dark-mode{
+    background-color: #0F1217 ;
+}
+
+.dark-mode-navbar{
+  background-color: $navbar-color !important;
+}
+
+
+
+.dark-mode-hero{
+    background: linear-gradient(135deg,#0F172A,#1E1B4B,#312E81) !important;
+}
+
+.hero-heading-dark{
+    h1{
+      color: $white-color !important;
+
+      span{
+        color: rgb(226, 226, 226) !important;
+      }
+    }
+  }
+
+
+
+.dark-mode-theme-button{
+    background-color: red;
+}
+
+
+
+
+
+
+
+.container-lg {
+    max-width: 1800px;
+}
+
+
+.section-space {
+    margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+.theme-para{
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: $para-text-color;
+
+}
+
+.theme-button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .55rem 1.15rem;
+}
+.theme-button-1{
+
+background: linear-gradient(90deg,rgba(157, 0, 255, 1) 0%, rgba(247, 24, 224, 1) 75%);
+border-radius: 30px;
+    color: $white-color;
+    text-transform: capitalize;
+}
+
+
+
+.theme-button-2{
+background-color: black;
+border-radius: 30px;
+    color: $white-color;
+    text-transform: capitalize;
+    border: 1px solid $para-text-color;
+}
+
+.section-heading{
+    h3{
+        font-size: clamp(2rem, 3vw, 6rem);
+    }
+}
+
+
+
+
+
+.glass-effect{
+
+
+
+
+background: rgba(67, 67, 67, 0.2);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(67, 67, 67, 0.3);
+}

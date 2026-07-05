@@ -1,0 +1,134 @@
+@import "../css/vendors/bs-5.3.8/bootstrap";
+@import "../css/partials/fonts";
+@import "../css/partials/base";
+
+.main-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.5rem;
+  background-color: $white-color;
+  z-index: 100;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+  button {
+    border: 1px solid $para-text-color;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      color: $para-text-color;
+      font-size: 2.2rem;
+    }
+  }
+
+  img {
+    height: clamp(2rem, 5vw, 3rem);
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      &:not(:last-child) {
+        margin-right: 2.5rem;
+      }
+      a {
+        color: $theme-color-1;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+  .dark-light-switch-mode {
+    .checkbox {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .checkbox-label {
+      background-color: $theme-color-1;
+      width: 50px;
+      height: 26px;
+      border-radius: 50px;
+      position: relative;
+      padding: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .icon-moon {
+      color: $white-color;
+    }
+
+    .icon-sun {
+      color: #f39c12;
+    }
+
+    .checkbox-label .ball {
+      background-color: $white-color;
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      border-radius: 50%;
+      transition: transform 0.2s linear;
+    }
+
+    .checkbox:checked + .checkbox-label .ball {
+      transform: translateX(24px);
+    }
+  }
+
+
+
+
+section.main-hero-section {
+  background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
+  padding: 5rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .content-inner {
+    width: 100%;
+    z-index: 4;
+  }
+
+  .col-inner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .hero-heading{
+    h1{
+      font-size: clamp(2.5rem, 3vw, 4.5rem);
+      font-weight: bold;
+      color: $black-color;
+
+      span{
+        padding-top: 1rem;
+        display: block;
+        font-size: 50%;
+        font-weight: 400;
+        color: rgb(20, 20, 20);
+      }
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@import "../css/partials/mediaqueries";
