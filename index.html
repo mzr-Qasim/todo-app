@@ -10,105 +10,30 @@
     <div class="site-wrapper">
       <header class="header">
         <nav class="navbar navbar-expand-lg main-navbar">
-          <div class="container container-lg">
-            <a class="navbar-brand" href="#"
-              ><img class="site-logo" src="" alt=""
+          <div class="container container-sm">
+            <div class="navbar-inner">
+                <a class="navbar-brand" href="#"
+              ><img class="site-logo" src="./assets/images/main-logo.svg" alt=""
             /></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            >
-              <i class="icon-hamburger"></i>
-            </button>
-            <div class="collapse navbar-collapse">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a
-                    class="nav-link theme-links theme-links-animation"
-                    href="#home"
-                    >Home</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link theme-links theme-links-animation"
-                    href="#about_us"
-                    >Resume</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link theme-links theme-links-animation"
-                    href="#solutions"
-                    >Service</a
-                  >
-                </li>
-                <li class="nav-item dark-light-switch-mode">
+            <div class="dark-light-switch-mode">
                     <input type="checkbox" class="checkbox" id="checkbox">
                     <label for="checkbox" class="checkbox-label">
                       <i class="icon-moon"></i>
                       <i class="icon-sun"></i>
                       <span class="ball"></span>
                     </label>
-                </li>
-              </ul>
-            </div>
+</div><!-- /.dark-light-switch-mode -->
+            </div><!-- /.navbar-inner -->
+          
           </div>
         </nav>
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasRight"
-          aria-labelledby="offcanvasRightLabel"
-        >
-          <div class="offcanvas-header">
-            <a class="navbar-brand" href="#"
-              ><img
-                class="offcanvas-logo"
-                src=""
-                alt=""
-            /></a>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            >
-              <i class="icon-hamburger-close"></i>
-            </button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link theme-links" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link theme-links" href="#about_us">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link theme-links" href="#solutions">Service</a>
-              </li>
-                <li class="nav-item dark-light-switch-mode">
-                    <input type="checkbox" class="checkbox" id="checkbox_2">
-                    <label for="checkbox_2" class="checkbox-label">
-                      <i class="icon-moon"></i>
-                      <i class="icon-sun"></i>
-                      <span class="ball"></span>
-                    </label>
-                </li>
-            </ul>
-          </div>
-        </div>
       </header>
       <!-- /.header -->
        <main class="main-content">
         <div class="site-wrapper">
-          <section class="main-hero-section">
+          <section class="main-hero-section section-space ">
             <div class="content-inner">
-               <div class="container container-lg">
+               <div class="container container-sm ">
               <div class="row">
                 <div class="col-lg-5">
                   <div class="col-inner">
@@ -127,6 +52,29 @@
             </div><!-- /.container -->
             </div><!-- /.content-inner -->
           </section><!-- /.main-hero-section -->
+          <section class="todo-app  section-space ">
+            <div class="container container-sm">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="col-inner">
+                hello
+              </div><!-- /.col-inner -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-6">
+              <div class="col-inner">
+                <div class="mb-3 d-flex create-task">
+                  <input type="text" id="taskInput" class="form-control" placeholder="Write your task">
+                  <button class="create-task-button theme-button theme-button-1" id="addBtn">create</button>
+                </div>
+<ul class="task-list" id="taskList">
+
+</ul>
+              </div><!-- /.col-inner -->
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+            </div><!-- /.container -->
+
+          </section><!-- /.todo-app -->
         </div><!-- /.site-wrapper -->
        </main><!-- /.main-content -->
        <footer class="footer"></footer><!-- /.footer -->

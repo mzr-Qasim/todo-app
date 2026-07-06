@@ -12073,6 +12073,10 @@ body {
   background-color: red;
 }
 
+.container-sm {
+  max-width: 1400px;
+}
+
 .container-lg {
   max-width: 1800px;
 }
@@ -12100,14 +12104,6 @@ body {
   text-transform: capitalize;
 }
 
-.theme-button-2 {
-  background-color: black;
-  border-radius: 30px;
-  color: #fff;
-  text-transform: capitalize;
-  border: 1px solid rgb(167, 167, 167);
-}
-
 .section-heading h3, .section-heading .h3 {
   font-size: clamp(2rem, 3vw, 6rem);
 }
@@ -12120,15 +12116,35 @@ body {
   border: 1px solid rgba(67, 67, 67, 0.3);
 }
 
+.completed .task-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.completed::before {
+  background-color: rgb(10, 206, 10);
+  border-color: rgb(10, 206, 10) !important;
+}
+
 .main-navbar {
+  margin-top: 1rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4.5rem;
-  background-color: #fff;
   z-index: 100;
+}
+.main-navbar .navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 2rem;
+  background-color: #fff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 15px;
+  width: 100%;
+}
+.main-navbar .site-logo {
+  height: 3rem;
 }
 .main-navbar button {
   border: 1px solid rgb(167, 167, 167);
@@ -12194,7 +12210,7 @@ body {
 
 section.main-hero-section {
   background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
-  padding: 5rem 0;
+  padding: 10rem 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -12227,6 +12243,41 @@ section.main-hero-section img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+section.todo-app .create-task {
+  display: flex;
+  align-items: center;
+}
+section.todo-app .create-task .create-task-button {
+  margin-left: 2rem;
+}
+section.todo-app .task-list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem 1rem 4rem;
+  gap: 3rem;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+section.todo-app .task-list li::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+  border: 1px solid grey;
+}
+section.todo-app .task-list li:not(:last-child) {
+  margin-bottom: 1.25rem;
 }
 
 @media (max-width: 1200px) {
