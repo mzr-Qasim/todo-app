@@ -12177,13 +12177,16 @@ body {
   box-shadow: 0 10px 25px rgba(157, 0, 255, 0.35);
 }
 
+.completed {
+  background: linear-gradient(135deg, #16a34a, #22c55e, #4ade80) !important;
+}
 .completed .task-text {
   text-decoration: line-through;
   opacity: 0.6;
 }
 .completed::before {
-  background-color: rgb(10, 206, 10);
-  border-color: rgb(10, 206, 10) !important;
+  background-color: rgb(0, 255, 0);
+  border-color: rgb(0, 255, 0) !important;
 }
 
 .main-navbar {
