@@ -7,7 +7,9 @@ const mainHeroHeading = document.querySelector(".hero-heading");
 const sectionHeading = document.querySelector(".section-heading");
 const taskInput = document.getElementById("taskInput");
 
-let tasks = [];
+
+
+
 
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode");
@@ -20,70 +22,141 @@ checkbox.addEventListener("change", () => {
 
 
 
+
+
+
 // Todo App
 
 const createButton = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
 
-createButton.addEventListener("click", function () {
-  if (taskInput.value.trim() === "") {
-    alert("Please enter a task!");
-    return;
-  }
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-  const li = document.createElement("li");
+// Function to create task UI
+function createTaskElement(task) {
+    const li = document.createElement("li");
 
-  li.innerHTML = `
-        <p class="task-text">${taskInput.value}</p>
+    if (task.completed) {
+        li.classList.add("completed");
+    }
+
+    li.innerHTML = `
+        <p class="task-text">${task.task}</p>
 
         <div class="task-actions">
-            <button class="complete-btn task-btns"><i class="icon-task-completed"></i></button>
-            <button type="button" class="delete-btn task-btns" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="icon-delete-task"></i></button>
-            
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Confirmation</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure to delete the task ?
-      </div>
-      <div class="modal-footer">
-              <button type="button" class="btn btn-secondary ">No</button>
-        <button type="button" class="btn btn-danger delete-final" data-bs-dismiss="modal">Yes</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <button class="complete-btn task-btns">
+                <i class="icon-task-completed"></i>
+            </button>
+
+            <button type="button"
+                class="delete-btn task-btns"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                <i class="icon-delete-task"></i>
+            </button>
+
+            <div class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1">
+
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5">
+                                Confirmation
+                            </h1>
+
+                            <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal">
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            Are you sure to delete the task?
+                        </div>
+
+                        <div class="modal-footer">
+
+
+                            <button type="button"
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                                No
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-danger delete-final"
+                                data-bs-dismiss="modal">
+                                Yes
+                            </button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
 
         </div>
     `;
 
-  const task = {
-    task: taskInput.value,
-  };
+    const completeBtn = li.querySelector(".complete-btn");
+    const deleteBtn = li.querySelector(".delete-final");
 
-  tasks.push(task);
+    completeBtn.addEventListener("click", function () {
 
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+        li.classList.toggle("completed");
 
-  const completeBtn = li.querySelector(".complete-btn");
-  const deleteBtn = li.querySelector(".delete-final");
-  const taskText = li.querySelector(".task-text");
+        task.completed = !task.completed;
 
-  completeBtn.addEventListener("click", function () {
-    li.classList.toggle("completed");
-  });
+        localStorage.setItem("tasks", JSON.stringify(tasks));
 
-  deleteBtn.addEventListener("click", function () {
-    li.remove();
-  });
+    });
 
-  taskList.appendChild(li);
+    deleteBtn.addEventListener("click", function () {
 
-  taskInput.value = "";
+        li.remove();
 
-  taskInput.focus();
+        tasks = tasks.filter(t => t !== task);
+
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    });
+
+    taskList.appendChild(li);
+}
+
+// Load saved tasks on refresh
+tasks.forEach(function (task) {
+    createTaskElement(task);
+});
+
+// Add new task
+createButton.addEventListener("click", function () {
+
+    if (taskInput.value.trim() === "") {
+        alert("Please enter a task!");
+        return;
+    }
+
+    const task = {
+        task: taskInput.value,
+        completed: false
+    };
+
+    tasks.push(task);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    createTaskElement(task);
+
+    taskInput.value = "";
+    taskInput.focus();
+
 });
