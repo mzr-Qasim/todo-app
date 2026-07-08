@@ -13,6 +13,16 @@ $theme-grey: #ffffff14;
 
 
 
+$theme-light-switch :  linear-gradient(90deg,rgba(157, 0, 255, 1) 0%, rgba(247, 24, 224, 1) 75%);
+
+$theme-dark-switch: linear-gradient(
+    135deg,
+    #4C1D95 0%,
+    #6D28D9 45%,
+    #A21CAF 100%
+) ;
+
+
 h1,
 h2,
 h3,
@@ -68,7 +78,7 @@ body {
 
 
 .dark-mode-hero{
-    background: linear-gradient(135deg,#0F172A,#1E1B4B,#312E81) !important;
+   background: $theme-dark-switch !important;
 }
 
 .hero-heading-dark{
@@ -81,15 +91,79 @@ body {
     }
   }
 
+.section-heading-dark{
+     h2{
+      color: $white-color !important;
 
-
-.dark-mode-theme-button{
-    background-color: red;
+      span{
+        color: rgb(226, 226, 226) !important;
+      }
+    }
 }
 
 
 
 
+
+.hero-heading {
+    h1 {
+      font-size: clamp(2.5rem, 3vw, 4.5rem);
+      font-weight: bold;
+      color: $black-color;
+
+      span {
+        padding-top: 1rem;
+        display: block;
+        font-size: 50%;
+        font-weight: 400;
+        color: rgb(20, 20, 20);
+      }
+    }
+  }
+
+.section-heading{
+    text-align: center;
+     h2 {
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      font-weight: bold;
+      color: $black-color;
+
+      span {
+        padding-top: 1rem;
+        display: block;
+        font-size: 50%;
+        font-weight: 400;
+        color: rgb(20, 20, 20);
+      }
+    }
+}
+
+
+.dark-mode-theme-button{
+   background: linear-gradient(
+    135deg,
+    #4C1D95 0%,
+    #6D28D9 45%,
+    #A21CAF 100%
+) !important;
+}
+
+
+
+.dark-mode-input-box{
+    background-color: rgb(59, 59, 59);
+    border-color: $white-color  !important;
+            color: rgb(221, 221, 221);
+
+    &::placeholder{
+            color: rgb(221, 221, 221);
+    }
+
+    &:focus{
+        background-color: rgb(59, 59, 59);
+            color: rgb(221, 221, 221);
+    }
+}
 
 
 
@@ -103,7 +177,11 @@ body {
 
 
 .section-space {
-    margin-bottom: 3rem;
+    margin-bottom: 8rem;
+}
+
+.section-space-sm {
+    margin-bottom: 4rem;
 }
 
 
@@ -123,19 +201,24 @@ body {
     align-items: center;
     justify-content: center;
     padding: .55rem 1.15rem;
+    transition: all ease-in-out .4s;
+
 }
 .theme-button-1{
 
-background: linear-gradient(90deg,rgba(157, 0, 255, 1) 0%, rgba(247, 24, 224, 1) 75%);
+background: $theme-light-switch;
 border-radius: 30px;
     color: $white-color;
     text-transform: capitalize;
-}
 
+        background-size: 200% 100%;
+    transition: all 0.35s ease;
+    border: none;
 
-.section-heading{
-    h3{
-        font-size: clamp(2rem, 3vw, 6rem);
+    &:hover{
+            background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(157, 0, 255, 0.35);
     }
 }
 
@@ -143,17 +226,6 @@ border-radius: 30px;
 
 
 
-.glass-effect{
-
-
-
-
-background: rgba(67, 67, 67, 0.2);
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(67, 67, 67, 0.3);
-}
 
 
 .completed {

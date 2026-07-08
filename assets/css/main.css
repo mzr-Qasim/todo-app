@@ -11982,8 +11982,8 @@ textarea.form-control-lg {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("fonts/icomoon.eot?14zal0");
-  src: url("fonts/icomoon.eot?14zal0#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?14zal0") format("truetype"), url("fonts/icomoon.woff?14zal0") format("woff"), url("fonts/icomoon.svg?14zal0#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?pd94g1");
+  src: url("fonts/icomoon.eot?pd94g1#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?pd94g1") format("truetype"), url("fonts/icomoon.woff?pd94g1") format("woff"), url("fonts/icomoon.svg?pd94g1#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12002,12 +12002,20 @@ textarea.form-control-lg {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-moon:before {
+.icon-delete-task:before {
   content: "\e900";
 }
 
-.icon-sun:before {
+.icon-moon:before {
   content: "\e901";
+}
+
+.icon-sun:before {
+  content: "\e902";
+}
+
+.icon-task-completed:before {
+  content: "\e903";
 }
 
 h1, .h1,
@@ -12059,7 +12067,7 @@ body {
 }
 
 .dark-mode-hero {
-  background: linear-gradient(135deg, #0F172A, #1E1B4B, #312E81) !important;
+  background: linear-gradient(135deg, #4C1D95 0%, #6D28D9 45%, #A21CAF 100%) !important;
 }
 
 .hero-heading-dark h1, .hero-heading-dark .h1 {
@@ -12069,8 +12077,60 @@ body {
   color: rgb(226, 226, 226) !important;
 }
 
+.section-heading-dark h2, .section-heading-dark .h2 {
+  color: #fff !important;
+}
+.section-heading-dark h2 span, .section-heading-dark .h2 span {
+  color: rgb(226, 226, 226) !important;
+}
+
+.hero-heading h1, .hero-heading .h1 {
+  font-size: clamp(2.5rem, 3vw, 4.5rem);
+  font-weight: bold;
+  color: #000;
+}
+.hero-heading h1 span, .hero-heading .h1 span {
+  padding-top: 1rem;
+  display: block;
+  font-size: 50%;
+  font-weight: 400;
+  color: rgb(20, 20, 20);
+}
+
+.section-heading {
+  text-align: center;
+}
+.section-heading h2, .section-heading .h2 {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: bold;
+  color: #000;
+}
+.section-heading h2 span, .section-heading .h2 span {
+  padding-top: 1rem;
+  display: block;
+  font-size: 50%;
+  font-weight: 400;
+  color: rgb(20, 20, 20);
+}
+
 .dark-mode-theme-button {
-  background-color: red;
+  background: linear-gradient(135deg, #4C1D95 0%, #6D28D9 45%, #A21CAF 100%) !important;
+}
+
+.dark-mode-input-box {
+  background-color: rgb(59, 59, 59);
+  border-color: #fff !important;
+  color: rgb(221, 221, 221);
+}
+.dark-mode-input-box::-moz-placeholder {
+  color: rgb(221, 221, 221);
+}
+.dark-mode-input-box::placeholder {
+  color: rgb(221, 221, 221);
+}
+.dark-mode-input-box:focus {
+  background-color: rgb(59, 59, 59);
+  color: rgb(221, 221, 221);
 }
 
 .container-sm {
@@ -12082,7 +12142,11 @@ body {
 }
 
 .section-space {
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
+}
+
+.section-space-sm {
+  margin-bottom: 4rem;
 }
 
 .theme-para {
@@ -12095,6 +12159,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.55rem 1.15rem;
+  transition: all ease-in-out 0.4s;
 }
 
 .theme-button-1 {
@@ -12102,18 +12167,14 @@ body {
   border-radius: 30px;
   color: #fff;
   text-transform: capitalize;
+  background-size: 200% 100%;
+  transition: all 0.35s ease;
+  border: none;
 }
-
-.section-heading h3, .section-heading .h3 {
-  font-size: clamp(2rem, 3vw, 6rem);
-}
-
-.glass-effect {
-  background: rgba(67, 67, 67, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(67, 67, 67, 0.3);
+.theme-button-1:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(157, 0, 255, 0.35);
 }
 
 .completed .task-text {
@@ -12209,7 +12270,7 @@ body {
 }
 
 section.main-hero-section {
-  background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
+  background: linear-gradient(90deg, rgb(157, 0, 255) 0%, rgb(247, 24, 224) 75%);
   padding: 10rem 0;
   min-height: 100vh;
   display: flex;
@@ -12226,18 +12287,6 @@ section.main-hero-section .col-inner {
   height: 100%;
   width: 100%;
 }
-section.main-hero-section .hero-heading h1, section.main-hero-section .hero-heading .h1 {
-  font-size: clamp(2.5rem, 3vw, 4.5rem);
-  font-weight: bold;
-  color: #000;
-}
-section.main-hero-section .hero-heading h1 span, section.main-hero-section .hero-heading .h1 span {
-  padding-top: 1rem;
-  display: block;
-  font-size: 50%;
-  font-weight: 400;
-  color: rgb(20, 20, 20);
-}
 section.main-hero-section img {
   width: 100%;
   height: 100%;
@@ -12245,24 +12294,48 @@ section.main-hero-section img {
      object-fit: cover;
 }
 
+section.todo-app .col-inner {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+section.todo-app .col-inner .todo-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 section.todo-app .create-task {
   display: flex;
   align-items: center;
+  width: 100%;
+}
+section.todo-app .create-task input {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-color: #9d00ff;
+}
+section.todo-app .create-task input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(157, 0, 255, 0.18);
 }
 section.todo-app .create-task .create-task-button {
   margin-left: 2rem;
 }
 section.todo-app .task-list li {
   position: relative;
-  display: flex;
+  display: inline-flex;
+  gap: 2rem;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 1rem 1.5rem 1rem 4rem;
-  gap: 3rem;
-  background-color: rgb(243, 243, 243);
+  background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
   border-radius: 10px;
-  border: 1px solid grey;
 }
 section.todo-app .task-list li::before {
   position: absolute;
@@ -12274,40 +12347,64 @@ section.todo-app .task-list li::before {
   height: 1.25rem;
   border-radius: 50%;
   margin-left: 1.5rem;
-  border: 1px solid grey;
+  border: 1px solid #fff;
 }
 section.todo-app .task-list li:not(:last-child) {
   margin-bottom: 1.25rem;
 }
+section.todo-app .task-list .task-text {
+  font-size: clamp(1.3rem, 1vw, 2rem);
+  font-weight: 500;
+  color: #fff;
+  text-transform: capitalize;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+section.todo-app .task-list .task-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+section.todo-app .task-list .task-actions button.task-btns {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  transition: all ease-in-out 0.3s;
+}
+section.todo-app .task-list .task-actions button.task-btns i {
+  font-size: 1.3rem;
+  transition: all ease-in-out 0.4s;
+  color: #fff;
+}
+section.todo-app .task-list .task-actions button.task-btns:hover i {
+  color: #fff;
+}
+section.todo-app .task-list .task-actions .complete-btn:hover {
+  border-color: rgb(10, 206, 10);
+  background-color: rgb(10, 206, 10);
+}
+section.todo-app .task-list .task-actions .delete-btn:hover {
+  border-color: red;
+  background-color: red;
+}
 
-@media (max-width: 1200px) {
-  .main-content-inner {
-    gap: 5rem;
-  }
-}
-@media (max-width: 991px) {
-  .main-content-inner {
+@media (max-width: 576px) {
+  section.todo-app .create-task {
     flex-direction: column;
+    gap: 1.5rem;
   }
-  .aside-wrapper {
-    width: 100%;
-    position: static;
+  section.todo-app .create-task .create-task-button {
+    margin-left: 0;
   }
-  .aside-wrapper .aside-main-hero {
-    display: block;
-  }
-  .aside-wrapper .aside-main-hero figure {
-    aspect-ratio: 1/0.65;
-  }
-  .content-inner {
-    padding: 0;
-  }
-}
-@media (max-width: 768px) {
-  section.resume-section .resume-wrapper li {
-    display: block;
-  }
-  section.resume-section .resume-wrapper li span {
-    display: block;
+  section.todo-app .task-list li {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=main.css.map */
