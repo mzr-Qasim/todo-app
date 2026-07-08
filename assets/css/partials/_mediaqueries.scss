@@ -12,6 +12,19 @@ section.todo-app {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 2rem;
+      p{
+                      margin-top: 1.5rem;
+      }
+
+
+       &::before {
+        top: .5rem;
+        left: 50%;
+        margin-left: 0;
+
+        transform: translateX(-50%);
+      }
   }
 }
 }

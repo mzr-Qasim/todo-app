@@ -12409,5 +12409,15 @@ section.todo-app .task-list .task-actions .delete-btn:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+  }
+  section.todo-app .task-list li p {
+    margin-top: 1.5rem;
+  }
+  section.todo-app .task-list li::before {
+    top: 0.5rem;
+    left: 50%;
+    margin-left: 0;
+    transform: translateX(-50%);
   }
 }/*# sourceMappingURL=main.css.map */
