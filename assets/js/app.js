@@ -32,7 +32,7 @@ const taskList = document.getElementById("taskList");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// Function to create task UI
+
 function createTaskElement(task) {
     const li = document.createElement("li");
 
@@ -132,12 +132,13 @@ function createTaskElement(task) {
     taskList.appendChild(li);
 }
 
-// Load saved tasks on refresh
+
+
 tasks.forEach(function (task) {
     createTaskElement(task);
 });
 
-// Add new task
+
 createButton.addEventListener("click", function () {
 
     if (taskInput.value.trim() === "") {
